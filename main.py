@@ -5,6 +5,10 @@ import json
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "FastAPI is running"}
+
 # Enable CORS for all origins
 app.add_middleware(
     CORSMiddleware,
