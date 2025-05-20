@@ -24,7 +24,7 @@ def get_marks(name: list[str] = []):
         with open("marks.json", "r") as f:
             marks_data = json.load(f)
     except Exception as e:
-        return {"error": f"Could not load marks.json: {e}"}
+        return {"error": f"Could not load marks.json: {str(e)}"}
     
     result = [marks_data.get(n, None) for n in name]
     return {"marks": result}
